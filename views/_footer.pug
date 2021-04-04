@@ -1,10 +1,69 @@
-footer.footer
-  .footer__logo
-    img(src='/img/logo-green.png' alt='Natour logo')
-  ul.footer__nav
-    li: a(href='#') About us
-    li: a(href='#') Download apps
-    li: a(href='#') Become a guide
-    li: a(href='#') Careers
-    li: a(href='#') Contact
-  p.footer__copyright &copy; by Jonas Schmedtmann. Feel free to use this project for your own purposes, EXCEPT producing your own course or tutorials!
+footer#footer
+  .footer-top
+    .container
+      .row
+        div
+          .footer-widget
+        .col-md-4
+          .footer-widget
+            h3 Link Cepat
+            ul
+              li
+                a(href='about-us.html') Tentang Kami
+              li
+                a(href='tours.html') Wisata
+              li
+                a(href='gallery.html') Galeri
+              li
+                a(href='contact-us.html') Hubungi Kami
+        .col-md-4
+          .footer-widget
+            h3 Info Kontak
+            ul
+              li
+                i.fa.fa-send(aria-hidden='true')
+                |  Tangcity
+                |                     Business Park Blok E.17 Cikokol Kota Tanggerang-Banten
+              li
+                i.fab.fa-whatsapp(aria-hidden='true')
+                |  +62
+                |                     81316755981
+              li
+                i.fas.fa-phone-square-alt(aria-hidden='true')
+                |                     (021)59728659
+              li
+                i.fa.fa-envelope(aria-hidden='true')
+                |                     Hello@goldenwisata.net
+        .col-md-4
+          .footer-widget
+            h3 Jam Kerja
+            ul.bussiness-hour
+              li
+                | Senin-Jumat: 
+                span.pull-right 9am - 5pm.
+              li
+                | Sabtu: 
+                span.pull-right 10am - 2pm.
+              li
+                | Minggu: 
+                span.pull-right Tutup.
+  .footer-bottom
+    .container
+      .row
+        .col-sm-12.col-md-6
+          .copyright
+            p Copyright &copy; 2021. All rights reserved.
+        .col-sm-12.col-md-6
+          ul.social-icons.pull-right
+            li
+              a(href='#', target='_blank')
+                i.fa.fa-facebook
+            li
+              a(href='#', target='_blank')
+                i.fa.fa-twitter
+            li
+              a(href='#', target='_blank')
+                i.fa.fa-linkedin
+            li
+              a(href='#', target='_blank')
+                i.fa.fa-instagram

@@ -1,45 +1,257 @@
 extends base
 
 block content
-  main.main
-    .card-container
-    
-      each tour in tours
-        .card
-          .card__header
-            .card__picture
-              .card__picture-overlay &nbsp;
-              img.card__picture-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
-            h3.heading-tertirary
-              span= tour.name
+  //- Preload
+  .preloader
+    .preloader_image
+      .sk-double-bounce
+        .sk-child.sk-double-bounce1
+        .sk-child.sk-double-bounce2
 
-          .card__details
-            h4.card__sub-heading= `${tour.difficulty} ${tour.duration}-day tour`
-            p.card__text= tour.summary
-            .card__data
-              svg.card__icon
-                use(xlink:href='/img/icons.svg#icon-map-pin')
-              span= tour.startLocation.description
-            //.card__data
-              svg.card__icon
-                use(xlink:href='/img/icons.svg#icon-calendar')
-              span= tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
-            .card__data
-              svg.card__icon
-                use(xlink:href='/img/icons.svg#icon-flag')
-              span= `${tour.locations.length} stops`
-            .card__data
-              svg.card__icon
-                use(xlink:href='/img/icons.svg#icon-user')
-              span= `${tour.maxGroupSize} people`
-
-          .card__footer
+  //- Layanan Kami
+  section.section-spacing
+    .container
+      .row
+        .col-md-12
+          .section-title.text-center
+            h2
+              span Layanan Kami
+      .row
+        .col-sm-6.col-md-6.col-lg-4
+          .service-item.text-center.wow.fadeIn
+            .icon
+              i.flaticon-train
+            h3 Pemesanan Kereta Api
             p
-              span.card__footer-value= `$${tour.price}`
-              | 
-              span.card__footer-text per person
-            p.card__ratings
-              span.card__footer-value= tour.ratingsAverage
-              | 
-              span.card__footer-text= `rating (${tour.ratingsQuantity})`
-            a.btn.btn--green.btn--small(href=`/tour/${tour.slug}`) Details
+              | Kamu ingin berangkat liburan atau pulang kampung, tapi belum
+              | tahu jadwal kereta api menuju ke kota tujuan kamu? Kamu bisa cek
+              | tiket kereta api ke destinasi yang kamu inginkan di Golden
+              | Wisata.
+        .col-sm-6.col-md-6.col-lg-4
+          .service-item.text-center.wow.fadeIn
+            .icon
+              i.flaticon-slumber
+            h3 Pemesanan Hotel
+            p Temukan Hotel pilihan mu beserta bonus &amp; diskon nya.
+        .col-sm-6.col-md-6.col-lg-4
+          .service-item.text-center.wow.fadeIn
+            .icon
+              i.flaticon-air-freight
+            h3 Pemesanan Penerbangan
+            p
+              | Dapatkan harga tiket pesawat murah untuk penerbangan
+              | pulang-pergi ke destinasi favorit Anda. Fitur Smart Trip dari
+              | Golden Wisata membuat Anda makin mudah menemukan kombinasi tiket
+              | pesawat online PP tanpa harus melakukan pencarian dua kali.
+        .col-sm-6.col-md-6.col-lg-4
+          .service-item.text-center.wow.fadeIn
+            .icon
+              i.flaticon-tag
+            h3 Pemesanan Tiket
+            p
+              | Pesan tiket sekaligus hotel dengan mudah dan cepat. Tidak perlu
+              | risau, hanya dengan satu sentuhan jari, tiket dan hotel yang
+              | kamu butuhkan bisa didapatkan dengan mudah.
+        .col-sm-6.col-md-6.col-lg-4
+          .service-item.text-center.wow.fadeIn
+            .icon
+              i.flaticon-ship
+            h3 Pemesanan Kapal Pesiar
+            p Temukan Tiket kapal pesiar untuk liburan terbaik kamu
+        .col-sm-6.col-md-6.col-lg-4
+          .service-item.text-center.wow.fadeIn
+            .icon
+              i.flaticon-house
+            h3 Layanan Digital
+            p Pilih berbagai fitur layanan digital hanya di Golden Wisata
+  //- end Layanan kami
+
+  //- Fetured tour
+  section.section-spacing.inverse-bg
+    .container
+      .row
+        .col-md-12
+          .section-title.text-center
+            h2
+              span Tur unggulan
+      .row
+        .col-12.col-md-12.col-lg-12.col-xl-6
+          .tour-item.wow.fadeIn
+            .thumb
+              a(href='Umroh-order.html')
+                img(src='golden/img/tour/Umroh.jpg', alt='')
+            .tour-info
+              h3 UMROH PLUS TURKEY
+              .tour-price
+                | RP 28.500.000 
+                br
+                small /Pax/Double
+              button.btn.btn-primary
+                a(href='Umroh-order.html')
+                  span Detail Selengkapnya
+        .col-12.col-md-12.col-lg-12.col-xl-6
+          .tour-item.wow.fadeIn
+            .media
+              .thumb
+                a(href='tourkomodo.html')
+                  img(src='golden/img/tour/Lombok2.jpg', alt='')
+              .media-body
+                .tour-info
+                  h3 Tour Lombok &amp; Komodo
+                  .tour-price
+                    | RP 3.500.000 
+                    br
+                    small 3 Hari 2 Malam
+                  button.btn.btn-primary
+                    a(href='tourkomodo.html')
+                      span Detail Selengkapnya
+          .tour-item.wow.fadeIn
+            .media
+              .thumb
+                a(href='kuala-lumpur-order.html')
+                  img(src='golden/img/tour/izuddin-helmi-adnan-1e71PSox7m8-unsplash.jpg', alt='')
+              .media-body
+                .tour-info
+                  h3 Tour Kuala lumpur
+                  .tour-price
+                    | RP 3.000.000 
+                    br
+                    small  3 Hari 2 Malam
+                  button.btn.btn-primary
+                    a(href='kuala-lumpur-order.html')
+                      span Detail Selengkapnya
+          .tour-item.wow.fadeIn
+            .media
+              .thumb
+                a(href='bangkok-order.html')
+                  img(src='golden/img/tour/Thailand.jpg', alt='')
+              .media-body
+                .tour-info
+                  h3 Tour Bangkok
+                  .tour-price
+                    | RP 3.500.000 
+                    br
+                    small  3 Hari 2 Malam
+                  button.btn.btn-primary
+                    a(href='bangkok-order.html')
+                      span Detail Selengkapnya
+      .row
+        .col-12.col-md-12.col-lg-12.col-xl-6
+          .tour-item.wow.fadeIn
+            .thumb
+              a(href='bali-order.html')
+                img(src='golden/img/tour/b2.jpg', alt='')
+            .tour-info
+              h3 BALI HONEYMOON
+              span 4 HARI 3 MALAM
+              .tour-price
+                | Rp. 4.000.000 
+                br
+                small  /Pax
+              button.btn.btn-primary
+                a(href='bali-order.html')
+                  span Detail Selengkapnya
+        .col-12.col-md-12.col-lg-12.col-xl-6(style='margin-top: 50px;')
+          .tour-item.wow.fadeIn
+            .media
+              .thumb
+                a(href='japan-order.html')
+                  img(src='golden/img/japan.jpg', alt='')
+              .media-body
+                .tour-info
+                  h3 Tour Jepang Dan Korea
+                  .tour-price
+                    | RP 20.000.000 
+                    br
+                    small  3 Hari 2 Malam
+                  button.btn.btn-primary
+                    a(href='japan-order.html')
+                      span Detail Selengkapnya
+          .tour-item.wow.fadeIn
+            .media
+              .thumb
+                a(href='padang-order.html')
+                  img(src='golden/img/tour/padang.jpg', alt='')
+              .media-body
+                .tour-info
+                  h3 Tour Padang
+                  .tour-price
+                    | RP 3.500.000 
+                    br
+                    small  3 Hari 2 Malam
+                  button.btn.btn-primary
+                    a(href='padang-order.html')
+                      span Detail Selengkapnya
+          .tour-item.wow.fadeIn
+            .media
+              .thumb
+                a(href='singapur-order.html')
+                  img(src='golden/img/tour/singapore.jpg', height='200px', alt='')
+              .media-body
+                .tour-info
+                  h3 Tour Batam One day singapore
+                  .tour-price
+                    | RP 3.500.000 
+                    br
+                    small  3 Hari 2 Malam
+                  button.btn.btn-primary
+                    a(href='singapur-order.html')
+                      span Detail Selengkapnya
+  //- End Fetured tour
+
+  //- Testimonial
+  section.section-spacing
+  .container
+    .row
+      .col-md-12
+        .section-title.text-center
+          h2
+            span Umpan balik turis
+    .row
+      .col-md-12.col-lg-10.offset-lg-1
+        .testimonials-outer
+          .cover-img.wow.fadeIn
+            img(src='golden/img/about-us/feedback.jpg', alt='')
+          #reviews-carousel.carousel.slide.wow.fadeInUp(data-ride='carousel', data-pause='false')
+            span.flaticon-quote
+            .carousel-inner
+              .carousel-item.active
+                h3 African Forest
+                h4 28 October, 2018
+                p
+                  | Duis non condimentum nunc. Nunc quis turpis eu est
+                  | tincidunt rutrum. Cras a purus quis sem tincidunt egestas
+                  | vel id lacus. Nunc sed volutpat erat. Duis sollicitudin.
+              .carousel-item
+                h3 African Forest
+                h4 28 October, 2018
+                p
+                  | Duis non condimentum nunc. Nunc quis turpis eu est
+                  | tincidunt rutrum. Cras a purus quis sem tincidunt egestas
+                  | vel id lacus. Nunc sed volutpat erat. Duis sollicitudin.
+            .carousel-control
+              a.control-prev(href='#reviews-carousel', role='button', data-slide='prev')
+                span.flaticon-left-arrow(aria-hidden='true')
+                span.sr-only Previous
+              a.control-next(href='#reviews-carousel', role='button', data-slide='next')
+                span.flaticon-right-arrow-1(aria-hidden='true')
+                span.sr-only Next
+//- End Testimonials
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
