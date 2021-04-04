@@ -20,23 +20,23 @@ html
       link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato:300,300i,700')
 
       //Bootstrap Core CSS
-      link(href="/golden/css/bootstrap.min.css" rel="stylesheet")
+      link(href='/golden/css/bootstrap.min.css' rel='stylesheet')
 
       //Animate CSS 
-      link(href="/golden/css/animate.css" rel="stylesheet")
+      link(href='/golden/css/animate.css' rel='stylesheet')
 
       //Venobox CSS 
-      link(href="/golden/css/venobox.css" rel="stylesheet")
+      link(href='/golden/css/venobox.css' rel='stylesheet')
     
       //Font-awesome 
-      link(rel="stylesheet" href="/golen/fonts/font-awesome/css/font-awesome.min.css")
-      link(rel="stylesheet" href="/golden/fonts/fontawesome-free-5.15.2-web/css/all.min.css")
+      link(rel='stylesheet' href='/golen/fonts/font-awesome/css/font-awesome.min.css')
+      link(rel='stylesheet' href='/golden/fonts/fontawesome-free-5.15.2-web/css/all.min.css')
 
       // flaticon  
-      link(rel="stylesheet" href="/goldrn/fonts/flaticon/css/flaticon.css")
+      link(rel='stylesheet' href='/goldrn/fonts/flaticon/css/flaticon.css')
 
       //Google font
-      link(href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700,800,900" rel="stylesheet")
+      link(href='https://fonts.googleapis.com/css?family=Poppins:300,400,400i,500,600,700,800,900' rel='stylesheet')
   
 
       title Golden | #{title}
@@ -52,7 +52,24 @@ html
     // FOOTER
     include _footer
     
-    //- script(src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js')
-    //- script(src='/js/mapbox.js')
-    //- script(src='/js/login.js')
+    //- Bact to top
+    div.back-top
+      a(href='#')
+        i.fa.fa-angle-up
+      
+    //- Golden jQuery
+    script(src='/golden/js/jquery-3.3.1.min.js')
+    script(src='/golden/js/popper.min.js')
+    script(src='/golden/js/bootstrap.min.js')
+    script(src='/golden/js/jquery.easing.min.js')
+    script(src='/golden/js/wow.js')
+    script(src='/golden/js/venobox.min.js')
+    script(src='/golden/js/SmoothScroll.js')
+    script(src='/golden/js/jquery.filterizr.min.js')
+    script(src='/golden/js/sticky-kit.min.js')
+    script(src='/golden/mail/js/form-validator.min.js')
+    script(src='/golden/mail/js/contact-form-script.js')
+    script(src='/golden/js/script.js')
+    //- End Golden jQuery
+
     script(src='/js/bundle.js')
