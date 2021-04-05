@@ -6,9 +6,13 @@ const router = express.Router();
 
 // All routes here
 router.get('/', authController.isLoggedIn, viewsController.getOverview);
+
 router.get('/tours', authController.isLoggedIn, viewsController.getAllTours);
-router.get('/tour/:slug', authController.isLoggedIn, viewsController.getTour);
+
+router.get('/tour/:_id', authController.isLoggedIn, viewsController.getTour);
+
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
+
 router.get('/me', authController.protect, viewsController.getAccount);
 
 router.post(

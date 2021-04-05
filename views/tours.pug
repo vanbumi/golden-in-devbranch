@@ -1,0 +1,40 @@
+extends base
+
+block content
+    section.inner-page-banner(style='background-image:url(golden/img/about-us/travel-concept-with-landmarks_1057-4873.jpg)')
+      .page-banner-caption
+        .container
+          .row
+            .col-md-12
+              .wisata-text
+                h1 Wisata
+              ol.breadcrumb
+
+    section.section-spacing.inverse-bg
+      .container
+        .row
+          .col-md-12
+            .section-title.text-center
+              h2
+                span Tur terbaru
+        h1 Domestik
+
+        .row.tours
+          each tour in tours
+            .col-md-12.col-lg-12.col-xl-6
+              .tour-item.wow.fadeIn
+                .media
+                  .thumb
+                    a(href=`/tour/${tour.slug}`)
+                      img(src=`golden/img/tour/${tour.imageCover}`, alt=`${tour.name}`)
+
+                  .media-body
+                    .tour-info
+                      h3= tour.name
+                      .tour-price
+                        h4= `Rp. ${(new Intl.NumberFormat(['ban', 'id']).format(tour.price))}`  
+                        br
+                        small= `Durasi: ${tour.durasi}`
+                      button.btn.btn-primary
+                        a(href=`/tour/${tour.slug}`)
+                          span Pesan sekarang!

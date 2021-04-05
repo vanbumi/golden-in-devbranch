@@ -8,6 +8,44 @@ block content
         .sk-child.sk-double-bounce1
         .sk-child.sk-double-bounce2
 
+  //- Carousel                
+  section.carousel.slide#banner(data-ride='carousel' data-pause='false')
+    .carousel-inner
+
+      .carousel-item.active(style='background-image: url(/golden/img/banner/b3.jpg')
+        .banner-caption
+          .container
+            .row
+              .col-md-6           
+                .hero-text
+                  h1.animated.fadeInUp Agen perjalan terbaik
+                  a.btn.btn-primary.animated.fadeInUp(href='/contact-us') Hubungi Kami
+
+      .carousel-item(style='background-image: url(/golden/img/banner/b1.jpg')
+        .banner-caption
+          .container
+            .row
+              .col-md-6           
+                .hero-text
+                  h1.animated.fadeInUp Agen perjalan tepercaya
+                  a.btn.btn-primary.animated.fadeInUp(href='/contact-us') Hubungi Kami
+
+      .carousel-item(style='background-image: url(/golden/img/banner/b2.jpg')
+        .banner-caption
+          .container
+            .row
+              .col-md-6           
+                .hero-text
+                  h1.animated.fadeInUp Dapatkan Tur Ekslusif
+                  a.btn.btn-primary.animated.fadeInUp(href='/contact-us') Hubungi Kami
+
+      ol.carousel-indicators
+        li.active(data-target='#banner' data-slide-to='0' )
+        li(data-target='#banner' data-slide-to='1')
+        li(data-target='#banner' data-slide-to='2')
+
+  //- End Carousel
+
   //- Layanan Kami
   section.section-spacing
     .container
@@ -78,7 +116,7 @@ block content
         .col-12.col-md-12.col-lg-12.col-xl-6
           .tour-item.wow.fadeIn
             .thumb
-              a(href='Umroh-order.html')
+              a(href=`/tour/${tour.slug}`)
                 img(src='golden/img/tour/Umroh.jpg', alt='')
             .tour-info
               h3 UMROH PLUS TURKEY
@@ -87,13 +125,13 @@ block content
                 br
                 small /Pax/Double
               button.btn.btn-primary
-                a(href='Umroh-order.html')
+                a(href=`/tour/${tour.slug}`)
                   span Detail Selengkapnya
         .col-12.col-md-12.col-lg-12.col-xl-6
           .tour-item.wow.fadeIn
             .media
               .thumb
-                a(href='tourkomodo.html')
+                a(href=`/tour/${tour.slug}`)
                   img(src='golden/img/tour/Lombok2.jpg', alt='')
               .media-body
                 .tour-info
@@ -103,12 +141,12 @@ block content
                     br
                     small 3 Hari 2 Malam
                   button.btn.btn-primary
-                    a(href='tourkomodo.html')
+                    a(href=`/tour/${tour.slug}`)
                       span Detail Selengkapnya
           .tour-item.wow.fadeIn
             .media
               .thumb
-                a(href='kuala-lumpur-order.html')
+                a(href=`/tour/${tour.slug}`)
                   img(src='golden/img/tour/izuddin-helmi-adnan-1e71PSox7m8-unsplash.jpg', alt='')
               .media-body
                 .tour-info
@@ -133,13 +171,13 @@ block content
                     br
                     small  3 Hari 2 Malam
                   button.btn.btn-primary
-                    a(href='bangkok-order.html')
+                    a(href=`/tour/${tour.slug}`)
                       span Detail Selengkapnya
       .row
         .col-12.col-md-12.col-lg-12.col-xl-6
           .tour-item.wow.fadeIn
             .thumb
-              a(href='bali-order.html')
+              a(href=`/tour/${tour.slug}`)
                 img(src='golden/img/tour/b2.jpg', alt='')
             .tour-info
               h3 BALI HONEYMOON
@@ -149,13 +187,13 @@ block content
                 br
                 small  /Pax
               button.btn.btn-primary
-                a(href='bali-order.html')
+                a(href=`/tour/${tour.slug}`)
                   span Detail Selengkapnya
         .col-12.col-md-12.col-lg-12.col-xl-6(style='margin-top: 50px;')
           .tour-item.wow.fadeIn
             .media
               .thumb
-                a(href='japan-order.html')
+                a(href=`/tour/${tour.slug}`)
                   img(src='golden/img/japan.jpg', alt='')
               .media-body
                 .tour-info
@@ -165,12 +203,12 @@ block content
                     br
                     small  3 Hari 2 Malam
                   button.btn.btn-primary
-                    a(href='japan-order.html')
+                    a(href=`/tour/${tour.slug}`)
                       span Detail Selengkapnya
           .tour-item.wow.fadeIn
             .media
               .thumb
-                a(href='padang-order.html')
+                a(href=`/tour/${tour.slug}`)
                   img(src='golden/img/tour/padang.jpg', alt='')
               .media-body
                 .tour-info
@@ -180,12 +218,12 @@ block content
                     br
                     small  3 Hari 2 Malam
                   button.btn.btn-primary
-                    a(href='padang-order.html')
+                    a(href=`/tour/${tour.slug}`)
                       span Detail Selengkapnya
           .tour-item.wow.fadeIn
             .media
               .thumb
-                a(href='singapur-order.html')
+                a(href=`/tour/${tour.slug}`)
                   img(src='golden/img/tour/singapore.jpg', height='200px', alt='')
               .media-body
                 .tour-info
@@ -195,7 +233,7 @@ block content
                     br
                     small  3 Hari 2 Malam
                   button.btn.btn-primary
-                    a(href='singapur-order.html')
+                    a(href=`/tour/${tour.slug}`)
                       span Detail Selengkapnya
   //- End Fetured tour
 

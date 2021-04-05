@@ -17,20 +17,16 @@ exports.getOverview = catchAsync(async (req, res, next) => {
 
 // Get all tours & display at tours page
 exports.getAllTours = catchAsync(async (req, res, next) => {
-  // 1) Get tour data from collection
   const tours = await Tour.find();
-
-  // 2) Build template
-  // 3) Render that template using tour data from 1)
   res.status(200).render('tours', {
     title: 'Agen Perjalanan',
     tours
   });
 });
 
+// Get Single Tour
 exports.getTour = catchAsync(async (req, res, next) => {
-  // 1) Get the data, for the requested tour (including reviews and guides)
-  const tour = await Tour.findOne({ slug: req.params.slug }).populate({
+  const tour = await Tour.findOne({ _id: req.params._id }).populate({
     path: 'reviews',
     fields: 'review rating user'
   });
@@ -38,15 +34,14 @@ exports.getTour = catchAsync(async (req, res, next) => {
   if (!tour) {
     return next(new AppError('There is no tour with that name.', 404));
   }
-
-  // 2) Build template
-  // 3) Render template using data from 1)
+  
   res.status(200).render('tour', {
     title: `${tour.name} Tour`,
     tour
   });
 });
 
+// Login Form
 exports.getLoginForm = (req, res) => {
   res.status(200).render('login', {
     title: 'Log into your account'
