@@ -112,129 +112,130 @@ block content
           .section-title.text-center
             h2
               span Tur unggulan
-      .row
-        .col-12.col-md-12.col-lg-12.col-xl-6
-          .tour-item.wow.fadeIn
-            .thumb
-              a(href=`/tour/${tour.slug}`)
-                img(src='golden/img/tour/Umroh.jpg', alt='')
-            .tour-info
-              h3 UMROH PLUS TURKEY
-              .tour-price
-                | RP 28.500.000 
-                br
-                small /Pax/Double
-              button.btn.btn-primary
-                a(href=`/tour/${tour.slug}`)
-                  span Detail Selengkapnya
-        .col-12.col-md-12.col-lg-12.col-xl-6
-          .tour-item.wow.fadeIn
-            .media
+      each tour in tours.slice(-1)
+        .row
+          .col-12.col-md-12.col-lg-12.col-xl-6
+            .tour-item.wow.fadeIn
               .thumb
                 a(href=`/tour/${tour.slug}`)
-                  img(src='golden/img/tour/Lombok2.jpg', alt='')
-              .media-body
-                .tour-info
-                  h3 Tour Lombok &amp; Komodo
-                  .tour-price
-                    | RP 3.500.000 
-                    br
-                    small 3 Hari 2 Malam
-                  button.btn.btn-primary
-                    a(href=`/tour/${tour.slug}`)
-                      span Detail Selengkapnya
-          .tour-item.wow.fadeIn
-            .media
+                  img(src='golden/img/tour/Umroh.jpg', alt='')
+              .tour-info
+                h3 UMROH PLUS TURKEY
+                .tour-price
+                  | RP 28.500.000 
+                  br
+                  small /Pax/Double
+                button.btn.btn-primary
+                  a(href=`/tour/${tour.slug}`)
+                    span Detail Selengkapnya
+          .col-12.col-md-12.col-lg-12.col-xl-6
+            .tour-item.wow.fadeIn
+              .media
+                .thumb
+                  a(href=`/tour/${tour.slug}`)
+                    img(src='golden/img/tour/Lombok2.jpg', alt='')
+                .media-body
+                  .tour-info
+                    h3 Tour Lombok &amp; Komodo
+                    .tour-price
+                      | RP 3.500.000 
+                      br
+                      small 3 Hari 2 Malam
+                    button.btn.btn-primary
+                      a(href=`/tour/${tour.slug}`)
+                        span Detail Selengkapnya
+            .tour-item.wow.fadeIn
+              .media
+                .thumb
+                  a(href=`/tour/${tour.slug}`)
+                    img(src='golden/img/tour/izuddin-helmi-adnan-1e71PSox7m8-unsplash.jpg', alt='')
+                .media-body
+                  .tour-info
+                    h3 Tour Kuala lumpur
+                    .tour-price
+                      | RP 3.000.000 
+                      br
+                      small  3 Hari 2 Malam
+                    button.btn.btn-primary
+                      a(href='kuala-lumpur-order.html')
+                        span Detail Selengkapnya
+            .tour-item.wow.fadeIn
+              .media
+                .thumb
+                  a(href='bangkok-order.html')
+                    img(src='golden/img/tour/Thailand.jpg', alt='')
+                .media-body
+                  .tour-info
+                    h3 Tour Bangkok
+                    .tour-price
+                      | RP 3.500.000 
+                      br
+                      small  3 Hari 2 Malam
+                    button.btn.btn-primary
+                      a(href=`/tour/${tour.slug}`)
+                        span Detail Selengkapnya
+        .row
+          .col-12.col-md-12.col-lg-12.col-xl-6
+            .tour-item.wow.fadeIn
               .thumb
                 a(href=`/tour/${tour.slug}`)
-                  img(src='golden/img/tour/izuddin-helmi-adnan-1e71PSox7m8-unsplash.jpg', alt='')
-              .media-body
-                .tour-info
-                  h3 Tour Kuala lumpur
-                  .tour-price
-                    | RP 3.000.000 
-                    br
-                    small  3 Hari 2 Malam
-                  button.btn.btn-primary
-                    a(href='kuala-lumpur-order.html')
-                      span Detail Selengkapnya
-          .tour-item.wow.fadeIn
-            .media
-              .thumb
-                a(href='bangkok-order.html')
-                  img(src='golden/img/tour/Thailand.jpg', alt='')
-              .media-body
-                .tour-info
-                  h3 Tour Bangkok
-                  .tour-price
-                    | RP 3.500.000 
-                    br
-                    small  3 Hari 2 Malam
-                  button.btn.btn-primary
-                    a(href=`/tour/${tour.slug}`)
-                      span Detail Selengkapnya
-      .row
-        .col-12.col-md-12.col-lg-12.col-xl-6
-          .tour-item.wow.fadeIn
-            .thumb
-              a(href=`/tour/${tour.slug}`)
-                img(src='golden/img/tour/b2.jpg', alt='')
-            .tour-info
-              h3 BALI HONEYMOON
-              span 4 HARI 3 MALAM
-              .tour-price
-                | Rp. 4.000.000 
-                br
-                small  /Pax
-              button.btn.btn-primary
-                a(href=`/tour/${tour.slug}`)
-                  span Detail Selengkapnya
-        .col-12.col-md-12.col-lg-12.col-xl-6(style='margin-top: 50px;')
-          .tour-item.wow.fadeIn
-            .media
-              .thumb
-                a(href=`/tour/${tour.slug}`)
-                  img(src='golden/img/japan.jpg', alt='')
-              .media-body
-                .tour-info
-                  h3 Tour Jepang Dan Korea
-                  .tour-price
-                    | RP 20.000.000 
-                    br
-                    small  3 Hari 2 Malam
-                  button.btn.btn-primary
-                    a(href=`/tour/${tour.slug}`)
-                      span Detail Selengkapnya
-          .tour-item.wow.fadeIn
-            .media
-              .thumb
-                a(href=`/tour/${tour.slug}`)
-                  img(src='golden/img/tour/padang.jpg', alt='')
-              .media-body
-                .tour-info
-                  h3 Tour Padang
-                  .tour-price
-                    | RP 3.500.000 
-                    br
-                    small  3 Hari 2 Malam
-                  button.btn.btn-primary
-                    a(href=`/tour/${tour.slug}`)
-                      span Detail Selengkapnya
-          .tour-item.wow.fadeIn
-            .media
-              .thumb
-                a(href=`/tour/${tour.slug}`)
-                  img(src='golden/img/tour/singapore.jpg', height='200px', alt='')
-              .media-body
-                .tour-info
-                  h3 Tour Batam One day singapore
-                  .tour-price
-                    | RP 3.500.000 
-                    br
-                    small  3 Hari 2 Malam
-                  button.btn.btn-primary
-                    a(href=`/tour/${tour.slug}`)
-                      span Detail Selengkapnya
+                  img(src='golden/img/tour/b2.jpg', alt='')
+              .tour-info
+                h3 BALI HONEYMOON
+                span 4 HARI 3 MALAM
+                .tour-price
+                  | Rp. 4.000.000 
+                  br
+                  small  /Pax
+                button.btn.btn-primary
+                  a(href=`/tour/${tour.slug}`)
+                    span Detail Selengkapnya
+          .col-12.col-md-12.col-lg-12.col-xl-6(style='margin-top: 50px;')
+            .tour-item.wow.fadeIn
+              .media
+                .thumb
+                  a(href=`/tour/${tour.slug}`)
+                    img(src='golden/img/japan.jpg', alt='')
+                .media-body
+                  .tour-info
+                    h3 Tour Jepang Dan Korea
+                    .tour-price
+                      | RP 20.000.000 
+                      br
+                      small  3 Hari 2 Malam
+                    button.btn.btn-primary
+                      a(href=`/tour/${tour.slug}`)
+                        span Detail Selengkapnya
+            .tour-item.wow.fadeIn
+              .media
+                .thumb
+                  a(href=`/tour/${tour.slug}`)
+                    img(src='golden/img/tour/padang.jpg', alt='')
+                .media-body
+                  .tour-info
+                    h3 Tour Padang
+                    .tour-price
+                      | RP 3.500.000 
+                      br
+                      small  3 Hari 2 Malam
+                    button.btn.btn-primary
+                      a(href=`/tour/${tour.slug}`)
+                        span Detail Selengkapnya
+            .tour-item.wow.fadeIn
+              .media
+                .thumb
+                  a(href=`/tour/${tour.slug}`)
+                    img(src='golden/img/tour/singapore.jpg', height='200px', alt='')
+                .media-body
+                  .tour-info
+                    h3 Tour Batam One day singapore
+                    .tour-price
+                      | RP 3.500.000 
+                      br
+                      small  3 Hari 2 Malam
+                    button.btn.btn-primary
+                      a(href=`/tour/${tour.slug}`)
+                        span Detail Selengkapnya
   //- End Fetured tour
 
   //- Testimonial

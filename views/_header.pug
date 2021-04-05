@@ -2,27 +2,43 @@
 nav.navbar.navbar-expand-lg.bg-white
   .container
     a.navbar-brand(href='index.html')
-      img(src='golden/ok-min.jpg' style='position: relative; top: -18px; margin-top: 5px; margin-left: 30px; width: 71px; height: 71px;' alt='Logo')
+      img(src='/golden/ok-min.jpg' style='position: relative; top: -18px; margin-top: 5px; margin-left: 30px; width: 71px; height: 71px;' alt='Logo')
     button.navbar-toggler.collapsed(type='button' data-toggle='collapse' data-target='#main-nav' aria-expanded='false' aria-label='Toggle navigation')
       span.navbar-toggler-icon
     .collapse.navbar-collapse#main-nav    
       ul.navbar-nav.ml-auto
-        li.nav-item.active
-          a.nav-link(href='/') Home     
-        li.nav-item
-          a.nav-link(href='tours') Wisata  
-        li.nav-item
-          a.nav-link(href='destinations.html') Destinasi
-        li.nav-item
-          a.nav-link(href='gallery.html') Galeri
-        li.nav-item
-          a.nav-link(href='about-us.html') Tentang Kami
-        li.nav-item
-          a.nav-link(href='contact-us.html') Hubungi Kami
+        if page_name === 'overview'
+          li.nav-item.active
+            a.nav-link(href='/') Home
+        else
+          li.nav-item
+            a.nav-link(href='/') Home
 
-        li.nav-item
-          a.nav-link(href='authentication-signin.html') Login/Daftar
+        if page_name === 'tours'
+          li.nav-item.active
+            a.nav-link(href='/tours') Wisata
+        else
+          li.nav-item
+            a.nav-link(href='/tours') Wisata
+        if page_name === 'destination'       
+          li.nav-item.active
+            a.nav-link(href='/destinations') Destinasi
+        else 
+          li.nav-item
+            a.nav-link(href='/destinations') Destinasi
 
+          li.nav-item
+            a.nav-link(href='/gallery.html') Galeri
+          li.nav-item
+            a.nav-link(href='/about-us.html') Tentang Kami
+          li.nav-item
+            a.nav-link(href='/contact-us.html') Hubungi Kami
+        if page_name === 'login'
+          li.nav-item.active
+            a.nav-link(href='/login') Login/Daftar
+        else
+          li.nav-item
+            a.nav-link(href='/login') Login/Daftar 
 
 
 

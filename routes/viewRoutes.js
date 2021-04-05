@@ -9,7 +9,9 @@ router.get('/', authController.isLoggedIn, viewsController.getOverview);
 
 router.get('/tours', authController.isLoggedIn, viewsController.getAllTours);
 
-router.get('/tour/:_id', authController.isLoggedIn, viewsController.getTour);
+router.get('/destinations', authController.isLoggedIn, viewsController.getDestinations);
+
+router.get('/tour/:slug', authController.isLoggedIn, viewsController.getTour);
 
 router.get('/login', authController.isLoggedIn, viewsController.getLoginForm);
 

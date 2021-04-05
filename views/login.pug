@@ -1,13 +1,59 @@
 extends base
 
 block content
-  main.main
+  .height-100v.d-flex.align-items-center.justify-content-center
+    .card.card-authentication1.mb-0
+      .card-body
+        .card-content.p-2
+          .text-center
+            img(src='/golden/img/logo.png', alt='Logo')
+          .card-title.text-uppercase.text-center.py-3 Sign In
+          
+          form.form
+            .form-group
+              label.sr-only(for='exampleInputUsername') Username
+              .position-relative.has-icon-right
+                input#email.form-control.input-shadow(type='Email', placeholder='you@example.com')
+                .form-control-position
+                  i.icon-user
+            .form-group
+              label.sr-only(for='exampleInputPassword') Password
+              .position-relative.has-icon-right
+                input#assword.form-control.input-shadow(type='password', placeholder='........')
+                .form-control-position
+                  i.icon-lock
+            .form-row
+              .form-group.col-6
+                .icheck-material-primary
+                  input#user-checkbox(type='checkbox')
+                  label(for='user-checkbox') Remember me
+              .form-group.col-6.text-right
+                a(href='authentication-reset-password.html') Reset Password
+            button.btn.btn-primary.btn-block(type='button') Sign In
+            //.text-center.mt-3 Sign In With
+            //.form-row.mt-4(style='box-sizing: border-box;')
+              .form-group.mb-0.col-4.text-center(style='text-align: center;')
+                button.btn.bg-facebook.text-white.btn-block(type='button', style='font-size: 13px;')  Facebook
+              .form-group.mb-0.col-4.text-right
+                button.btn.bg-twitter.text-white.btn-block(type='button', style='font-size: 13px;') Twitter
+              .form-group.mb-0.col-4.text-right
+                button.btn.text-white.btn-block(type='button', style='font-size: 13px; background:  #F4B400;') Google
+      .card-footer.text-center.py-3
+        p.text-dark.mb-0
+          | Do not have an account? 
+          a(href='#')  Sign Up here
+
+    br
+
+
+
+  //main.main
     .login-form
       h2.heading-secondary.ma-bt-lg Log into your account
       form.form.form--login
         .form__group
           label.form__label(for='email') Email address
-          input#email.form__input(type='email', placeholder='you@example.com', required)
+          input#email.form__input(type='email',   placeholder='you@example.com', required)
         .form__group.ma-bt-md
           label.form__label(for='password') Password
           input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')

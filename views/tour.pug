@@ -13,75 +13,71 @@ mixin overviewBox(label, text, icon)
     span.overview-box__text= text
 
 block content
-  section.section-header
-    .header__hero
-      .header__hero-overlay &nbsp;
-      img.header__hero-img(src=`/img/tours/${tour.imageCover}`, alt=`${tour.name}`)
+  // Preload
+  .preloader
+    .preloader_image
+      .sk-double-bounce
+        .sk-child.sk-double-bounce1
+      .sk-child.sk-double-bounce2
 
-    .heading-box
-      h1.heading-primary
-        span= `${tour.name} tour`
-      .heading-box__group
-        .heading-box__detail
-          svg.heading-box__icon
-            use(xlink:href='/img/icons.svg#icon-clock')
-          span.heading-box__text= `${tour.duration} days`
-        .heading-box__detail
-          svg.heading-box__icon
-            use(xlink:href='/img/icons.svg#icon-map-pin')
-          span.heading-box__text= tour.startLocation.description
+  section.inner-page-banner(style='background-image: url(/golden/img/about-us/travel-concept-with-landmarks_1057-4873.jpg);')
+    .page-banner-caption
+      .container
+        .row
+          .col-md-12
+            h1 Detail Tur
+            ol.breadcrumb
+              li.breadcrumb-item
+                a(href='/') Home
+              li.breadcrumb-item.active Detail Tur
+  // end banner
 
-  section.section-description
-    .overview-box
-      div
-        .overview-box__group
-          h2.heading-secondary.ma-bt-lg Quick facts
+  // Keterangan Tour
+  section.section-spacing
+    .container
+      .row
+        .col-md-8
+          .news-details(style="font-family: 'Poppins', sans-serif;")
+            .post-thumb
+              img(src=`/golden/img/tour/${tour.imageTour}`, alt=`${tour.name}`)
 
-          - const date = tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
-          +overviewBox('Next date', date, 'calendar')
-          +overviewBox('Difficulty', tour.difficulty, 'trending-up')
-          +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
-          +overviewBox('Rating', `${tour.ratingsAverage} / 5`, 'star')
+            h3= `${tour.name} ${tour.durasi}`   
+              
+            br
 
-        .overview-box__group
-          h2.heading-secondary.ma-bt-lg Your tour guides
+            .deskripsi(style='font-size: 16px; color: #B0B0B0; font-weight: 400;')
+            - const paragraphs = tour.deskripsi.split('\n');
+            each parag in paragraphs
+              p= parag
 
-          each guide in tour.guides
-            .overview-box__detail
-              img.overview-box__img(src=`/img/users/${guide.photo}`, alt=`${guide.name}`)
+          h4= `HARGA Rp. ${(new Intl.NumberFormat(['ban', 'id']).format(tour.price))},- /pax`
 
-              - if (guide.role === 'lead-guide')
-                span.overview-box__label Lead guide
-              - if (guide.role === 'guide')
-                span.overview-box__label Tour guide
-              span.overview-box__text= guide.name
 
-    .description-box
-      h2.heading-secondary.ma-bt-lg= `About ${tour.name} tour`
-      - const parapraphs = tour.description.split('\n');
-      each p in parapraphs
-        p.description__text= p
 
-  section.section-pictures
-    each img, i in tour.images
-      .picture-box
-        img.picture-box__img(src=`/img/tours/${img}`, alt=`The Park Camper Tour ${i + 1}`, class=`picture-box__img--${i + 1}`)
 
-  section.section-map
-    #map(data-locations=`${JSON.stringify(tour.locations)}`)
+        // Sidebar
+        .col-md-4
+          #sidebar.sidebar
+            .sidebar-inner
+              .book-tour
+                h3 Isi Data Pemesan
+                .sidebar-item.sidebar-widget
+                  form(action='#', method='post')
+                    .form-group
+                      label(for='exampleInputEmail1') Nama Kontak
+                      input.form-control(type='text')
+                    .form-group
+                      label(for='exampleInputEmail1') No.handpone kontak
+                      input.form-control(type='tel')
+                    .form-group
+                      label(for='exampleInputEmail1') Alamat email kontak
+                      input.form-control(type='email')
+                    .form-group
+                      label(for='exampleInputEmail1') Jumlah Pemesan
+                      input.form-control(type='text')
+                    .form-group
+                      label(for='') Jadwal Keberangkatan
+                      input.form-control(type='date')
+                  a(href='boo.html')
+                    button.btn.btn-primary(type='submit') Lanjutkan Pemesanan
 
-  section.section-reviews
-    .reviews
-      each review in tour.reviews
-        +reviewCard(review)
-
-  section.section-cta
-    .cta
-      .cta__img.cta__img--logo
-        img(src='/img/logo-white.png', alt='Natours logo')
-      img.cta__img.cta__img--1(src=`/img/tours/${tour.images[1]}`, alt='Tour picture')
-      img.cta__img.cta__img--2(src=`/img/tours/${tour.images[2]}`, alt='Tour picture')
-      .cta__content
-        h2.heading-secondary What are you waiting for?
-        p.cta__text= `${tour.duration} days. 1 adventure. Infinite memories. Make it yours today!`
-        button.btn.btn--green.span-all-rows Book tour now!
