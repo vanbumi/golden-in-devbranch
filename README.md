@@ -2,7 +2,7 @@
 
 1. Clone atau Download di folder local kamu.
 
-2. Lakukan "mpm Install" untuk menginstal module dan dependencies node js :
+2. Lakukan "npm Install" untuk menginstal module dan dependencies node js :
     ```
         npm install
     ```
