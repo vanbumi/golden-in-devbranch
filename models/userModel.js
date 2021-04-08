@@ -48,6 +48,7 @@ const userSchema = new mongoose.Schema({
   }
 });
 
+// presave with bycrypt
 userSchema.pre('save', async function(next) {
   // Only run this function if password was actually modified
   if (!this.isModified('password')) return next();
@@ -73,6 +74,7 @@ userSchema.pre(/^find/, function(next) {
   next();
 });
 
+// Untuk compare passw & confirm sama atau tidak 
 userSchema.methods.correctPassword = async function(
   candidatePassword,
   userPassword

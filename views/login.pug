@@ -1,7 +1,7 @@
 extends base
 
 block content
-  .height-100v.d-flex.align-items-center.justify-content-center
+  //.height-100v.d-flex.align-items-center.justify-content-center
     .card.card-authentication1.mb-0
       .card-body
         .card-content.p-2
@@ -47,13 +47,13 @@ block content
 
 
 
-  //main.main
+  main.main
     .login-form
-      h2.heading-secondary.ma-bt-lg Log into your account
+      h2.heading-secondary.ma-bt-lg Log into your account oke
       form.form.form--login
         .form__group
           label.form__label(for='email') Email address
-          input#email.form__input(type='email',   placeholder='you@example.com', required)
+          input#email.form__input(type='email', placeholder='you@example.com', required)
         .form__group.ma-bt-md
           label.form__label(for='password') Password
           input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
